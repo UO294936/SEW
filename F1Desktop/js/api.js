@@ -1,4 +1,4 @@
-class MiAppWeb {
+class MiApi {
     constructor() {
         this.canvas = document.querySelector('canvas');
         this.ctx = this.canvas.getContext('2d');
@@ -34,12 +34,10 @@ class MiAppWeb {
     setupDragAndDrop() {
         this.colors.forEach(colorElement => {
             colorElement.addEventListener('dragstart', (e) => this.onDragStart(e, colorElement));
-            colorElement.addEventListener('touchstart', (e) => this.onTouchStart(e, colorElement));
         });
+
         this.canvas.addEventListener('dragover', (e) => e.preventDefault());
         this.canvas.addEventListener('drop', (e) => this.onDrop(e));
-        this.canvas.addEventListener('touchmove', (e) => this.onTouchMove(e));
-        this.canvas.addEventListener('touchend', (e) => this.onTouchEnd(e));
     }
 
     onDragStart(event, element) {
@@ -47,54 +45,8 @@ class MiAppWeb {
         event.dataTransfer.setData('color', color);
     }
 
-    onTouchStart(event, element) {
-        event.preventDefault();
-        const color = getComputedStyle(element).backgroundColor;
-        this.touchData = {
-            color,
-            startX: event.touches[0].clientX,
-            startY: event.touches[0].clientY
-        };
-    }
-    
-    onTouchMove(event) {
-        event.preventDefault();
-    
-        // Actualizar las coordenadas del arrastre
-        const touch = event.touches[0];
-        this.touchData.currentX = touch.clientX;
-        this.touchData.currentY = touch.clientY;
-    
-        // Opcional: Mostrar una visualización del objeto siendo arrastrado
-        this.showDraggingEffect(this.touchData.currentX, this.touchData.currentY, this.touchData.color);
-    }
-    
-    onTouchEnd(event) {
-        event.preventDefault();
-    
-        // Obtener las coordenadas donde se "suelta" el toque
-        const touch = event.changedTouches[0];
-        const dropX = touch.clientX;
-        const dropY = touch.clientY;
-    
-        // Obtener las dimensiones del canvas
-        const canvasRect = this.canvas.getBoundingClientRect();
-    
-        // Verificar si el toque terminó dentro del canvas
-        if (
-            dropX >= canvasRect.left &&
-            dropX <= canvasRect.right &&
-            dropY >= canvasRect.top &&
-            dropY <= canvasRect.bottom
-        ) {
-            // Soltar el color en el canvas
-            this.selectedColor = this.touchData.color;
-            this.drawCar(this.carPosition);
-        }
-    }
-
     onDrop(event) {
-        if (this.raceStarted) return;
+        if ( this.raceStarted ) return;
 
         const color = event.dataTransfer.getData('color');
         this.selectedColor = color;
@@ -173,13 +125,6 @@ class MiAppWeb {
     startRace() {
         if (this.raceStarted) return;
 
-        /*
-        if ( this.selectedColor === 'white' ){
-            alert("Por favor, seleccione un color para su coche");
-            return;
-        }
-        */
-
         this.raceStarted = true;
         this.raceEnded = false;
         this.timeElapsed = 0;
@@ -190,14 +135,7 @@ class MiAppWeb {
         this.canvas.requestPointerLock();
 
         this.boundMoveCar = this.moveCar.bind(this);
-        
         document.addEventListener('mousedown', this.boundMoveCar);
-        
-        // Pantallas táctiles
-        document.addEventListener('touchstart', this.boundMoveCar);
-        document.addEventListener('touchmove', this.boundMoveCar);
-        document.addEventListener('touchend', this.boundMoveCar);
-
     }
 
     updateTimer() {
@@ -240,19 +178,21 @@ class MiAppWeb {
         clearInterval(this.timerInterval);
 
         document.removeEventListener('mousedown', this.boundMoveCar);
-        document.removeEventListener('touchstart', this.boundMoveCar); // Add this line
-        
+
         this.timeElapsed = 0;
         this.timerDisplay.textContent = `Tiempo: ${this.timeElapsed.toFixed(1)} segundos`;
-        
+
         this.selectedColor = 'white';
-        
+
         // Copia los contenidos de initialCarPosition sin hacer hacer asignaciones a referencias
         this.carPosition = { ...this.initialCarPosition };
-        
+
         cancelAnimationFrame(this.animationFrame);
-        
+
         this.drawCar(this.carPosition);
     }
 }
-new MiAppWeb();
+new MiApi();
+
+
+
