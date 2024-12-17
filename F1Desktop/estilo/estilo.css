@@ -40,11 +40,23 @@ header * {
 /*
    Especificidad: (0, 0, 1) = 1
 */
+/*
+   Especificidad: (0, 0, 1) = 1
+*/
 footer {
-   background-color: #ada8a87e;  /*Color heredado de body (#261915)*/
+   background-color: #bebcbc7e;  /*Color heredado de body (#000000)*/
    margin: 0; 
    padding: 1em;
 }
+
+/*
+   Especificidad: (0, 0, 2) = 2
+   Enlaces del footer
+*/
+footer a{
+   color: #000000;  /*Background color heredado de footer (#bebcbc7e)*/
+}
+
 
 /*
    Especificidad: (0, 0, 1) = 1
