@@ -46,17 +46,26 @@
         <h2>Circuito de La Fórmula 1</h2>
 
         <h3>Cargue la información sobre el circuito (archivo .XML)</h3>
-        <p><input type="file" onchange="circuito.leerArchivoXml(this.files);" accept=".xml"></p>
+        <p>
+            <label for="archivoXml">Seleccione archivo XML:</label>
+            <input type="file" id="archivoXml" onchange="circuito.leerArchivoXml(this.files);" accept=".xml">
+        </p>
         <section>
             <h4>Circuito:</h4>
         </section>
         
         <h3>Cargue los puntos del circuito (archivo .KML)</h3>
-        <p><input type="file" onchange="circuito.leerArchivoKml(this.files);" accept=".kml"></p>
+        <p>
+            <label for="archivoKml">Seleccione archivo KML:</label>
+            <input type="file" id="archivoKml" onchange="circuito.leerArchivoKml(this.files);" accept=".kml">
+        </p>
         <!-- El validador HTML genera numerosas advertencias y errores, provocados por el código HTML inyectado por la API de google maps al generar el mapa dinámico -->
 
         <h3>Cargue la altimetría del circuito (archivo .SVG)</h3>
-        <p><input type="file" onchange="circuito.leerArchivoSvg(this.files);" accept=".svg"></p>
+        <p>
+            <label for="archivoSvg">Seleccione archivo SVG:</label>
+            <input type="file" id="archivoSvg" onchange="circuito.leerArchivoSvg(this.files);" accept=".svg">
+        </p>
         <section>
             <h4>Altimetría:</h4>
         </section>
