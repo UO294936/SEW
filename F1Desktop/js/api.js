@@ -167,7 +167,14 @@ class MiApi {
         this.canvas.requestPointerLock();
 
         this.boundMoveCar = this.moveCar.bind(this);
+        
         document.addEventListener('mousedown', this.boundMoveCar);
+        
+        // Pantallas táctiles
+        document.addEventListener('touchstart', this.boundMoveCar);
+        document.addEventListener('touchmove', this.boundMoveCar);
+        document.addEventListener('touchend', this.boundMoveCar);
+
     }
 
     updateTimer() {
@@ -210,17 +217,18 @@ class MiApi {
         clearInterval(this.timerInterval);
 
         document.removeEventListener('mousedown', this.boundMoveCar);
-
+        document.removeEventListener('touchstart', this.boundMoveCar); // Add this line
+        
         this.timeElapsed = 0;
         this.timerDisplay.textContent = `Tiempo: ${this.timeElapsed.toFixed(1)} segundos`;
-
+        
         this.selectedColor = 'white';
-
+        
         // Copia los contenidos de initialCarPosition sin hacer hacer asignaciones a referencias
         this.carPosition = { ...this.initialCarPosition };
-
+        
         cancelAnimationFrame(this.animationFrame);
-
+        
         this.drawCar(this.carPosition);
     }
 }
