@@ -169,7 +169,7 @@ article h3 {
   Especificidad: (0, 0, 2) = 2
   (Botones del carrousel de la sección de viajes)
 */
-article > button {
+div + article > button {
   position: absolute;
   width: 2em;
   height: 2em;
@@ -188,7 +188,7 @@ article > button {
   Especificidad: (0, 1, 2) = 12
   (Botón del carrousel de la sección de viajes)
 */
-article > button:nth-of-type(2) {
+div + article > button:nth-of-type(2) {
   top: 50%;
   left: 2%;
 }
@@ -197,7 +197,7 @@ article > button:nth-of-type(2) {
   Especificidad: (0, 1, 2) = 12
   (Botón del carrousel de la sección de viajes)
 */
-article > button:nth-of-type(1) {
+div + article > button:nth-of-type(1) {
   top: 50%;
   right: 2%;
 }
