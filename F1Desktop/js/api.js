@@ -34,10 +34,13 @@ class MiApi {
     setupDragAndDrop() {
         this.colors.forEach(colorElement => {
             colorElement.addEventListener('dragstart', (e) => this.onDragStart(e, colorElement));
+            colorElement.addEventListener('touchstart', (e) => this.onTouchStart(e, colorElement));
         });
 
         this.canvas.addEventListener('dragover', (e) => e.preventDefault());
         this.canvas.addEventListener('drop', (e) => this.onDrop(e));
+        this.canvas.addEventListener('touchmove', (e) => this.onTouchMove(e));
+        this.canvas.addEventListener('touchend', (e) => this.onTouchEnd(e));
     }
 
     onDragStart(event, element) {
@@ -45,8 +48,32 @@ class MiApi {
         event.dataTransfer.setData('color', color);
     }
 
+    onTouchStart(event, element) {
+        event.preventDefault();
+        const color = getComputedStyle(element).backgroundColor;
+        this.touchData = { color, startX: event.touches[0].clientX, startY: event.touches[0].clientY };
+    }
+
+    onTouchMove(event) {
+        event.preventDefault();
+    }
+
+    onTouchEnd(event) {
+        if (this.raceStarted) return;
+
+        const touch = event.changedTouches[0];
+        const dropX = touch.clientX;
+        const dropY = touch.clientY;
+        const canvasRect = this.canvas.getBoundingClientRect();
+
+        if (dropX >= canvasRect.left && dropX <= canvasRect.right && dropY >= canvasRect.top && dropY <= canvasRect.bottom) {
+            this.selectedColor = this.touchData.color;
+            this.drawCar(this.carPosition);
+        }
+    }
+
     onDrop(event) {
-        if ( this.raceStarted ) return;
+        if (this.raceStarted) return;
 
         const color = event.dataTransfer.getData('color');
         this.selectedColor = color;
@@ -124,12 +151,12 @@ class MiApi {
 
     startRace() {
         if (this.raceStarted) return;
-/*
+
         if ( this.selectedColor === 'white' ){
             alert("Por favor, seleccione un color para su coche");
             return;
         }
-  */  
+    
         this.raceStarted = true;
         this.raceEnded = false;
         this.timeElapsed = 0;
@@ -198,6 +225,3 @@ class MiApi {
     }
 }
 new MiApi();
-
-
-
