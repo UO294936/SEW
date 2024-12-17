@@ -124,12 +124,12 @@ class MiApi {
 
     startRace() {
         if (this.raceStarted) return;
-
+/*
         if ( this.selectedColor === 'white' ){
             alert("Por favor, seleccione un color para su coche");
             return;
         }
-    
+  */  
         this.raceStarted = true;
         this.raceEnded = false;
         this.timeElapsed = 0;
