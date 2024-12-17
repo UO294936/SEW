@@ -35,12 +35,11 @@ class MiAppWeb {
         this.colors.forEach(colorElement => {
             colorElement.addEventListener('dragstart', (e) => this.onDragStart(e, colorElement));
             colorElement.addEventListener('touchstart', (e) => this.onTouchStart(e, colorElement));
-            colorElement.addEventListener('dragover', (e) => e.preventDefault());
-            colorElement.addEventListener('drop', (e) => this.onDrop(e));
-            colorElement.addEventListener('touchmove', (e) => this.onTouchMove(e));
-            colorElement.addEventListener('touchend', (e) => this.onTouchEnd(e));
         });
-
+        this.canvas.addEventListener('dragover', (e) => e.preventDefault());
+        this.canvas.addEventListener('drop', (e) => this.onDrop(e));
+        this.canvas.addEventListener('touchmove', (e) => this.onTouchMove(e));
+        this.canvas.addEventListener('touchend', (e) => this.onTouchEnd(e));
     }
 
     onDragStart(event, element) {
@@ -174,11 +173,13 @@ class MiAppWeb {
     startRace() {
         if (this.raceStarted) return;
 
+        /*
         if ( this.selectedColor === 'white' ){
             alert("Por favor, seleccione un color para su coche");
             return;
         }
-    
+        */
+
         this.raceStarted = true;
         this.raceEnded = false;
         this.timeElapsed = 0;
