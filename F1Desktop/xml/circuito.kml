@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Bahrein</name>
+<Style id='lineaRoja'>
+<LineStyle>
+<color>ff0000ff</color>
+<width>5</width>
+</LineStyle>
+</Style>
+<Placemark>
+<name>Punto de Salida</name>
+<Point>
+<coordinates>50.5104638070137,26.03272633725046,7.315482807631994</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 1 - Sector 1</name>
+<description>Distancia: 445.04 m</description>
+<Point>
+<coordinates>50.51089421566191,26.03627181461484,9.373660753534201</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 2 - Sector 1</name>
+<description>Distancia: 17.47 m</description>
+<Point>
+<coordinates>50.51080179328611,26.03682816335187,9.995196855729489</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 3 - Sector 1</name>
+<description>Distancia: 15.11 m</description>
+<Point>
+<coordinates>50.5108379,26.0367919,9.8051740</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 4 - Sector 1</name>
+<description>Distancia: 78.45 m</description>
+<Point>
+<coordinates>50.51083785986081,26.03679194083811,9.783296680617536</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 5 - Sector 1</name>
+<description>Distancia: 18.91 m</description>
+<Point>
+<coordinates>50.51134104780417,26.03639065802284,8.761450995347309</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 6 - Sector 1</name>
+<description>Distancia: 102.95 m</description>
+<Point>
+<coordinates>50.51135270628129,26.03638807208429,8.76143506782099</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 7 - Sector 1</name>
+<description>Distancia: 573.4 m</description>
+<Point>
+<coordinates>50.5124619551689,26.03654957574037,10.72032692028021</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 8 - Sector 1</name>
+<description>Distancia: 37.96 m</description>
+<Point>
+<coordinates>50.5180228242295,26.03547806416249,23.3249648664247</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 9 - Sector 1</name>
+<description>Distancia: 101.22 m</description>
+<Point>
+<coordinates>50.5180228242295,26.03547806416249,23.3249648664247</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 10 - Sector 1</name>
+<description>Distancia: 8.79 m</description>
+<Point>
+<coordinates>50.51759575278481,26.03457848591471,21.98820239565004</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 11 - Sector 2</name>
+<description>Distancia: 150.88 m</description>
+<Point>
+<coordinates>50.5176029980326,26.03457163403803,21.98076962076747</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 12 - Sector 2</name>
+<description>Distancia: 49.84 m</description>
+<Point>
+<coordinates>50.51674311228621,26.03367728875936,20.38673517041013</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 13 - Sector 2</name>
+<description>Distancia: 32.54 m</description>
+<Point>
+<coordinates>50.51635867710439,26.03317865639469,19.94987328098608</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 14 - Sector 2</name>
+<description>Distancia: 83.46 m</description>
+<Point>
+<coordinates>50.51635867710439,26.03317865639469,19.94987328098608</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 15 - Sector 2</name>
+<description>Distancia: 49.32 m</description>
+<Point>
+<coordinates>50.51568109439308,26.03305722578325,18.78483567247376</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 16 - Sector 2</name>
+<description>Distancia: 217.72 m</description>
+<Point>
+<coordinates>50.51491391798034,26.03283866177919,15.62230333834803</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 17 - Sector 2</name>
+<description>Distancia: 15.87 m</description>
+<Point>
+<coordinates>50.51343077826163,26.03153978278801,7.834224973580608</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 18 - Sector 2</name>
+<description>Distancia: 21.44 m</description>
+<Point>
+<coordinates>50.5134180955095,26.03153585060784,7.834237336192961</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 19 - Sector 2</name>
+<description>Distancia: 324.82 m</description>
+<Point>
+<coordinates>50.51329142345979,26.0315289698286,7.834207279158441</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 20 - Sector 2</name>
+<description>Distancia: 52.73 m</description>
+<Point>
+<coordinates>50.51328485290968,26.03465995631514,11.03705780562203</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 21 - Sector 2</name>
+<description>Distancia: 52.52 m</description>
+<Point>
+<coordinates>50.51325514104752,26.03486686833136,10.31874506326561</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 22 - Sector 2</name>
+<description>Distancia: 16.98 m</description>
+<Point>
+<coordinates>50.51292293325976,26.03510387328244,9.102278814774285</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 23 - Sector 2</name>
+<description>Distancia: 160.99 m</description>
+<Point>
+<coordinates>50.5128971456327,26.03509757455381,9.041968368484955</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 24 - Sector 2</name>
+<description>Distancia: 531.92 m</description>
+<Point>
+<coordinates>50.51278600119211,26.03444207535627,8.284469939053924</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 25 - Sector 2</name>
+<description>Distancia: 28.69 m</description>
+<Point>
+<coordinates>50.51238661169258,26.02907194599371,9.064633399705173</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 26 - Sector 2</name>
+<description>Distancia: 38.58 m</description>
+<Point>
+<coordinates>50.5124935059734,26.02891851399616,8.785324668207577</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 27 - Sector 2</name>
+<description>Distancia: 43.95 m</description>
+<Point>
+<coordinates>50.5124935059734,26.02891851399616,8.785324668207577</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 28 - Sector 2</name>
+<description>Distancia: 42.85 m</description>
+<Point>
+<coordinates>50.51313029765587,26.02898784822955,10.06830269634252</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 29 - Sector 2</name>
+<description>Distancia: 57.89 m</description>
+<Point>
+<coordinates>50.51313029764406,26.02898784827181,10.06830269634252</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 30 - Sector 2</name>
+<description>Distancia: 121.29 m</description>
+<Point>
+<coordinates>50.51367136072514,26.02935249978998,12.52242188584678</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 31 - Sector 2</name>
+<description>Distancia: 57.74 m</description>
+<Point>
+<coordinates>50.5142420075323,26.03013855731789,16.97231051416815</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 32 - Sector 2</name>
+<description>Distancia: 59.96 m</description>
+<Point>
+<coordinates>50.51496812503853,26.03037244426537,18.65630354404585</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 33 - Sector 2</name>
+<description>Distancia: 86.27 m</description>
+<Point>
+<coordinates>50.51496812503853,26.03037244426537,18.65630354404585</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 34 - Sector 2</name>
+<description>Distancia: 2.46 m</description>
+<Point>
+<coordinates>50.51607254989272,26.03060276856004,22.07014819444448</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 35 - Sector 3</name>
+<description>Distancia: 100.23 m</description>
+<Point>
+<coordinates>50.51627089159602,26.03052512056782,22.20580839239247</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 36 - Sector 3</name>
+<description>Distancia: 50.66 m</description>
+<Point>
+<coordinates>50.51691508483673,26.0301944147165,22.3935142659993</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 37 - Sector 3</name>
+<description>Distancia: 22.24 m</description>
+<Point>
+<coordinates>50.51722957195712,26.02974205970689,21.38889714644712</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 38 - Sector 3</name>
+<description>Distancia: 24.48 m</description>
+<Point>
+<coordinates>50.51723989274324,26.02972851578381,21.35692354344634</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 39 - Sector 3</name>
+<description>Distancia: 743.00 m</description>
+<Point>
+<coordinates>50.51671780315962,26.02931231868887,20.2056890441418</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 40 - Sector 3</name>
+<description>Distancia: 17.24 m</description>
+<Point>
+<coordinates>50.51076825410828,26.0262000358883,11.35057124293945</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 41 - Sector 3</name>
+<description>Distancia: 80.17 m</description>
+<Point>
+<coordinates>50.51076825411873,26.02620003587567,11.23116533811356</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 42 - Sector 3</name>
+<description>Distancia: 648.06 m</description>
+<Point>
+<coordinates>50.51030231720086,26.02661559046522,10.06432079778728</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tramo 43 - Sector 3</name>
+<description>Distancia: 16.29 m</description>
+<Point>
+<coordinates>50.51037579731027,26.03232043821576,7.370616560304553</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ruta Completa</name>
+<LineString>
+<tessellate>1</tessellate>
+<coordinates>
+50.5104638070137,26.03272633725046,7.315482807631994
+50.51089421566191,26.03627181461484,9.373660753534201
+50.51080179328611,26.03682816335187,9.995196855729489
+50.5108379,26.0367919,9.8051740
+50.51083785986081,26.03679194083811,9.783296680617536
+50.51134104780417,26.03639065802284,8.761450995347309
+50.51135270628129,26.03638807208429,8.76143506782099
+50.5124619551689,26.03654957574037,10.72032692028021
+50.5180228242295,26.03547806416249,23.3249648664247
+50.5180228242295,26.03547806416249,23.3249648664247
+50.51759575278481,26.03457848591471,21.98820239565004
+50.5176029980326,26.03457163403803,21.98076962076747
+50.51674311228621,26.03367728875936,20.38673517041013
+50.51635867710439,26.03317865639469,19.94987328098608
+50.51635867710439,26.03317865639469,19.94987328098608
+50.51568109439308,26.03305722578325,18.78483567247376
+50.51491391798034,26.03283866177919,15.62230333834803
+50.51343077826163,26.03153978278801,7.834224973580608
+50.5134180955095,26.03153585060784,7.834237336192961
+50.51329142345979,26.0315289698286,7.834207279158441
+50.51328485290968,26.03465995631514,11.03705780562203
+50.51325514104752,26.03486686833136,10.31874506326561
+50.51292293325976,26.03510387328244,9.102278814774285
+50.5128971456327,26.03509757455381,9.041968368484955
+50.51278600119211,26.03444207535627,8.284469939053924
+50.51238661169258,26.02907194599371,9.064633399705173
+50.5124935059734,26.02891851399616,8.785324668207577
+50.5124935059734,26.02891851399616,8.785324668207577
+50.51313029765587,26.02898784822955,10.06830269634252
+50.51313029764406,26.02898784827181,10.06830269634252
+50.51367136072514,26.02935249978998,12.52242188584678
+50.5142420075323,26.03013855731789,16.97231051416815
+50.51496812503853,26.03037244426537,18.65630354404585
+50.51496812503853,26.03037244426537,18.65630354404585
+50.51607254989272,26.03060276856004,22.07014819444448
+50.51627089159602,26.03052512056782,22.20580839239247
+50.51691508483673,26.0301944147165,22.3935142659993
+50.51722957195712,26.02974205970689,21.38889714644712
+50.51723989274324,26.02972851578381,21.35692354344634
+50.51671780315962,26.02931231868887,20.2056890441418
+50.51076825410828,26.0262000358883,11.35057124293945
+50.51076825411873,26.02620003587567,11.23116533811356
+50.51030231720086,26.02661559046522,10.06432079778728
+50.51037579731027,26.03232043821576,7.370616560304553
+50.5104638070137,26.03272633725046,7.315482807631994
+</coordinates>
+</LineString>
+<Style>
+<LineStyle>
+<color>ff0000ff</color>
+<width>4</width>
+</LineStyle>
+</Style>
+</Placemark>
+</Document>
+</kml>

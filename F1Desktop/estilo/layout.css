@@ -1,0 +1,250 @@
+/*Saúl Martín Fernández UO294936*/
+
+/*
+  Especificidad: (0, 0, 2) = 2
+*/
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 2.5em 2em;
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+*/
+header nav {
+  display: flex;
+  row-gap: 1em;
+  column-gap: 1.5em;
+}
+
+/*
+  Especificidad: (0, 0, 1) = 1
+*/
+main {
+  position: relative;
+  margin: 1em;
+  padding: 1em 1.5em;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/*
+  Especificidad: (0, 0, 1) = 1
+*/
+aside {
+  margin: 1em;
+  padding: 0.5em 1em;
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+  (Navegación de la sección de juegos)
+*/
+aside nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin: 1.5em 0.5em;
+  padding: 1.5em;
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+  (Mapa dinánmico de la sección de circuito)
+*/
+main > div {
+  width: 70em;
+  max-width: 70%;
+  max-height: 50%;
+  height: 50em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+  Especificidad: (0, 0, 1) = 1
+*/
+svg {
+  max-width: 70%;
+  width: 50em;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Mi aplicación web */
+/*
+  Especificidad: (0, 0, 4) = 4
+*/
+h2 + p + p + section {
+  display: grid;
+  place-items: center;
+  height: 60em;
+  max-height: 80%;
+  margin: 0;
+  gap: 1em;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/*
+  Especificidad: (0, 0, 3) = 3
+  (Cuadrados de color de mi apliación web)
+*/
+p + section > figure {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 0.5em;
+  border: 0.1em solid #333;
+  justify-self: center;
+}
+
+/*
+  Especificidad: (0, 0, 1) = 1
+*/
+canvas {
+  border: 0.1em solid #333;
+  justify-self: center;
+  align-self: center;
+  width: 70em;
+  max-width: 90%;
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+*/
+canvas ~ button {
+  display: flex;
+  grid-row: auto;
+  justify-self: center;
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+  (Carrousel de la sección de viajes)
+*/
+div + article {
+  width: 100%;
+  max-width: 75em;
+  height: 60em;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1em;
+}
+
+/*
+   Especificidad: (0, 0, 4) = 4
+   (Carrousel de imágenes en la sección de viajes)
+*/
+div + article h3 ~ img {
+  width: 100%;
+  max-width: 75em;
+  height: 50em;
+  position: absolute;
+  transition: all 0.5s;
+  object-fit: cover;
+  border-radius: 0.5em;
+}
+
+/*
+   Especificidad: (0, 0, 2) = 2
+   (Carrousel de imágenes en la sección de viajes)
+*/
+article h3 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+  (Botones del carrousel de la sección de viajes)
+*/
+article > button {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  padding: 0.5em;
+  border: none;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  Especificidad: (0, 1, 2) = 12
+  (Botón del carrousel de la sección de viajes)
+*/
+article > button:nth-of-type(2) {
+  top: 50%;
+  left: 2%;
+}
+
+/*
+  Especificidad: (0, 1, 2) = 12
+  (Botón del carrousel de la sección de viajes)
+*/
+article > button:nth-of-type(1) {
+  top: 50%;
+  right: 2%;
+}
+
+/* Pantalla de teléfono móvil */
+@media (max-width:768px) {
+
+  /*
+    Especificidad: (0, 0, 1) = 1
+  */
+  header {
+      flex-direction: column;   /*Redifinición del menú de navegación para dispositivos móviles (se colocan en columna)*/
+      align-items: flex-start;  /*Redifinición del menú de navegación para dispositivos móviles (se colocan en desde arriba)*/
+  }
+
+  /*
+    Especificidad: (0, 0, 2) = 2
+  */
+  header nav {
+      flex-direction: column;
+      width: 100%; 
+      font-size: 1em;
+  }
+
+  /*
+    Especificidad: (0, 0, 2) = 2
+  */
+  header + p {
+      display: none;
+  }
+}
+
+/* Pantallas de tablets */
+@media (min-width:768px) and (max-width:1080px) {
+
+  /*
+    Especificidad: (0, 0, 1) = 1
+  */
+  header {
+      padding: 1.5em 1em;   /*Redifinición del espacio para el menú de navegación para tablets*/
+  }
+
+  /*
+    Especificidad: (0, 0, 2) = 2
+  */
+  header nav {
+      justify-content: flex-end;
+      margin-left: 2em; 
+  }
+}

@@ -1,0 +1,50 @@
+Usuarios,maria,80
+Usuarios,javier,100
+Usuarios,sofia,50
+Usuarios,alberto,70
+Usuarios,clara,20
+Pilotos,Daniel,Ricciardo,Australiano,8,3,15,0
+Pilotos,Carlos,Sainz,Español,2,3,5,0
+Pilotos,Pierre,Gasly,Francés,1,0,3,0
+Pilotos,Esteban,Ocon,Francés,1,0,2,0
+Pilotos,Lance,Stroll,Canadiense,0,0,1,0
+Equipos,AlphaTauri,Italia,1,2,0
+Equipos,Force India,India,0,1,0
+Equipos,Brawn GP,Reino Unido,8,5,1
+Equipos,Lotus,Reino Unido,2,2,0
+Equipos,Sauber,Suiza,0,0,0
+Circuitos,Circuito de Sepang,Malasia,5.543,56,37
+Circuitos,Circuito de Austin,Estados Unidos,5.513,56,45
+Circuitos,Circuito de Marina Bay,Singapur,5.063,61,23
+Circuitos,Circuito de Monza,Italia,5.793,53,93
+Circuitos,Circuito de Yas Marina,Emiratos Árabes Unidos,5.281,58,16
+Carreras,Gran Premio de Malasia,2023-03-12,1
+Carreras,Gran Premio de Estados Unidos,2023-04-02,2
+Carreras,Gran Premio de Singapur,2023-09-17,3
+Carreras,Gran Premio de Italia,2023-09-03,4
+Carreras,Gran Premio de Emiratos Árabes Unidos,2023-11-26,5
+Resultados_Carreras,1,1,1,1,25
+Resultados_Carreras,1,2,2,2,18
+Resultados_Carreras,1,3,3,3,15
+Resultados_Carreras,1,4,4,4,12
+Resultados_Carreras,1,5,5,5,10
+Resultados_Carreras,2,1,1,1,25
+Resultados_Carreras,2,2,2,2,18
+Resultados_Carreras,2,3,3,3,15
+Resultados_Carreras,2,4,4,4,12
+Resultados_Carreras,2,5,5,5,10
+Resultados_Carreras,3,1,1,1,25
+Resultados_Carreras,3,2,2,2,18
+Resultados_Carreras,3,3,3,3,15
+Resultados_Carreras,3,4,4,4,12
+Resultados_Carreras,3,5,5,5,10
+Resultados_Carreras,4,1,1,1,25
+Resultados_Carreras,4,2,2,2,18
+Resultados_Carreras,4,3,3,3,15
+Resultados_Carreras,4,4,4,4,12
+Resultados_Carreras,4,5,5,5,10
+Resultados_Carreras,5,1,1,1,25
+Resultados_Carreras,5,2,2,2,18
+Resultados_Carreras,5,3,3,3,15
+Resultados_Carreras,5,4,4,4,12
+Resultados_Carreras,5,5,5,5,10
