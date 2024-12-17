@@ -16,7 +16,7 @@
 */
 body {
    background-color: #ffffff;
-   color: #261915;
+   color: #000000;
    font-family: Arial, sans-serif;
    line-height: 1.6;
    margin: 0;
@@ -53,9 +53,17 @@ footer {
 header + p {
    font-size: 1em;
    font-style: italic;
-   background-color: #df8d8d;    /*Color heredado de body (#261915)*/
+   background-color: #e7bebe;    /*Color heredado de body (#000000)*/
    padding: 1.5em 2em;
    margin: 0;
+}
+
+/*
+   Especificidad: (0, 0, 3) = 3
+   (Enlaces migas de navegación)
+*/
+header + p a {
+   color: #000000;    /*Background color heredado de header + p (#e7bebe)*/
 }
 
 /*
