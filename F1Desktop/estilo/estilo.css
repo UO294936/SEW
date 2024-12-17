@@ -44,7 +44,7 @@ header * {
    Especificidad: (0, 0, 1) = 1
 */
 footer {
-   background-color: #bebcbc7e;  /*Color heredado de body (#000000)*/
+   background-color: #EFEFEF;  /*Color heredado de body (#000000)*/
    margin: 0; 
    padding: 1em;
 }
