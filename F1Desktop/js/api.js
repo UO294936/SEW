@@ -64,9 +64,11 @@ class MiApi {
 
             colorElement.addEventListener('dragstart', (e) => this.onDragStart(e, colorElement));
             colorElement.addEventListener('dragend', (e) => this.onDragEnd(e, colorElement));
+
+            // Pantallas tácticles
             colorElement.addEventListener('touchstart', (e) => this.onTouchStart(e, colorElement));
-            colorElement.addEventListener('touchmove', (e) => this.onTouchMove(e, colorElement));
-            colorElement.addEventListener('touchend', (e) => this.onTouchEnd(e, colorElement));
+            colorElement.addEventListener('touchmove', (e) => this.onTouchMove(e));
+            colorElement.addEventListener('touchend', (e) => this.onTouchEnd(e));
 
         });
 
@@ -112,38 +114,69 @@ class MiApi {
     }
 
     onDragEnd(event, element) {
-         // No modificar 'soltadoDentro' aquí, solo depurar
-        console.log("onDragEnd -> encimaDelCanvas:", this.encimaDelCanvas, ", soltadoDentro:", this.soltadoDentro);
+        // El evento de soltar el color se controla en onDrop
     }
 
-    onTouchStart(event, element) { 
-        this.activeEvent = 'start';
-        console.log("tocando el elemento");
-    }
-
-    onTouchMove() {
-        console.log("moviendo el elemento tacticlemnete...");
-        this.activeEvent = 'move';
-    }
-
-    onTouchEnd(event, element) {
-        console.log("soltando el elemento tactil...");
-        
+    onTouchStart(event, element) {
         event.preventDefault();
-        if (this.activeEvent === 'move') {
-
-            if (this.encimaDelCanvas) {
-
-                console.log("soltando el elemento tactil dentro del canvas");
-                this.soltadoDentro = true;
-
-                const color = element.dataset.color;
-                this.selectedColor = color;
-                this.drawCar(this.carPosition);
-            } else {
-                // Podriamos poner un mensaje avisando que no lo ha soltado en el canvas
-                this.soltadoDentro = false;
-            }
+        console.log("Touch Start");
+    
+        // Guardar el color del elemento seleccionado
+        this.touching = true;
+        this.selectedTouchColor = getComputedStyle(element).backgroundColor;
+    
+        // Guardar la posición inicial del toque
+        const touch = event.touches[0];
+        this.touchStartX = touch.clientX;
+        this.touchStartY = touch.clientY;
+    }
+    
+    onTouchMove(event) {
+        if (!this.touching) return;
+    
+        const touch = event.touches[0];
+        const x = touch.clientX;
+        const y = touch.clientY;
+    
+        console.log(`Touch Move: x=${x}, y=${y}`);
+    
+        // Simular arrastrar el elemento
+        this.currentTouchX = x;
+        this.currentTouchY = y;
+    
+        // Comprobar si está dentro del canvas
+        const canvasRect = this.canvas.getBoundingClientRect();
+        this.encimaDelCanvas = (
+            x >= canvasRect.left &&
+            x <= canvasRect.right &&
+            y >= canvasRect.top &&
+            y <= canvasRect.bottom
+        );
+    
+        if (this.encimaDelCanvas) {
+            console.log("Arrastrando dentro del canvas");
+        } else {
+            console.log("Fuera del canvas");
+        }
+    }
+    
+    onTouchEnd(event) {
+        if (!this.touching) return;
+        console.log("Touch End");
+    
+        this.touching = false;
+    
+        // Verificar si se soltó dentro del canvas
+        if (this.encimaDelCanvas) {
+            console.log("Elemento soltado dentro del canvas");
+            this.soltadoDentro = true;
+    
+            // Usar el color almacenado
+            this.selectedColor = this.selectedTouchColor;
+            this.drawCar(this.carPosition);
+        } else {
+            console.log("Elemento soltado fuera del canvas");
+            this.soltadoDentro = false;
         }
     }
 
