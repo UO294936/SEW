@@ -112,7 +112,8 @@ class MiApi {
         event.preventDefault(); // Prevenir comportamiento por defecto
     
         // Cambiar el color del coche
-        this.selectedColor = getComputedStyle(element).backgroundColor;
+        const color = event.dataTransfer.getData('color');
+        this.selectedColor = color;
     
         // Dibujar el coche con el nuevo color
         this.drawCar(this.carPosition);
