@@ -105,6 +105,9 @@ p + section > figure {
   border-radius: 0.5em;
   border: 0.1em solid #333;
   justify-self: center;
+
+  pointer-events: auto;       /* Habilita la interacción con eventos */
+  touch-action: manipulation; /* Optimiza para eventos táctiles */
 }
 
 /*
