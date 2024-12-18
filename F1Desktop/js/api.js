@@ -66,10 +66,7 @@ class MiApi {
             colorElement.addEventListener('dragend', (e) => this.onDragEnd(e, colorElement));
 
             // Pantallas tácticles
-            colorElement.addEventListener('touchstart', (e) => this.onTouchStart(e, colorElement));
-            colorElement.addEventListener('touchmove', (e) => this.onTouchMove(e));
-            colorElement.addEventListener('touchend', (e) => this.onTouchEnd(e));
-
+            colorElement.addEventListener('touchstart', (e) => this.onTouch(e, colorElement));
         });
 
     }
@@ -77,16 +74,13 @@ class MiApi {
     onDragOver(event) {
         event.preventDefault(); // Necesario para permitir soltar
         event.dataTransfer.dropEffect = "move"; // Cambia el cursor
-        console.log("Arrastrando sobre el canvas");
     }
 
     onDragEnter(event){
-        console.log("Entrando al canvas");
         this.encimaDelCanvas = true;
     }
 
     onDragLeave(){
-        console.log("Saliendo del canvas");
         this.encimaDelCanvas = false;
     }
 
@@ -96,88 +90,32 @@ class MiApi {
         if (this.raceStarted) return;
 
         if (this.encimaDelCanvas) {
-            console.log("onDrop -> encimaDelCanvas:", this.encimaDelCanvas, ", soltadoDentro: true");
             this.soltadoDentro = true;
 
             const color = event.dataTransfer.getData('color');
             this.selectedColor = color;
             this.drawCar(this.carPosition);
         } else {
-            console.log("onDrop -> encimaDelCanvas:", this.encimaDelCanvas, ", soltadoDentro: false");
             this.soltadoDentro = false;
         }
     }
 
     onDragStart(event, element) {
         event.dataTransfer.setData('color', getComputedStyle(element).backgroundColor);
-        console.log("moviendo el elemento...");
     }
 
     onDragEnd(event, element) {
         // El evento de soltar el color se controla en onDrop
     }
 
-    onTouchStart(event, element) {
-        event.preventDefault();
-        console.log("Touch Start");
+    onTouch(event, element) {
+        event.preventDefault(); // Prevenir comportamiento por defecto
     
-        // Guardar el color del elemento seleccionado
-        this.touching = true;
-        this.selectedTouchColor = getComputedStyle(element).backgroundColor;
+        // Cambiar el color del coche
+        this.selectedColor = getComputedStyle(element).backgroundColor;
     
-        // Guardar la posición inicial del toque
-        const touch = event.touches[0];
-        this.touchStartX = touch.clientX;
-        this.touchStartY = touch.clientY;
-    }
-    
-    onTouchMove(event) {
-        if (!this.touching) return;
-    
-        const touch = event.touches[0];
-        const x = touch.clientX;
-        const y = touch.clientY;
-    
-        console.log(`Touch Move: x=${x}, y=${y}`);
-    
-        // Simular arrastrar el elemento
-        this.currentTouchX = x;
-        this.currentTouchY = y;
-    
-        // Comprobar si está dentro del canvas
-        const canvasRect = this.canvas.getBoundingClientRect();
-        this.encimaDelCanvas = (
-            x >= canvasRect.left &&
-            x <= canvasRect.right &&
-            y >= canvasRect.top &&
-            y <= canvasRect.bottom
-        );
-    
-        if (this.encimaDelCanvas) {
-            console.log("Arrastrando dentro del canvas");
-        } else {
-            console.log("Fuera del canvas");
-        }
-    }
-    
-    onTouchEnd(event) {
-        if (!this.touching) return;
-        console.log("Touch End");
-    
-        this.touching = false;
-    
-        // Verificar si se soltó dentro del canvas
-        if (this.encimaDelCanvas) {
-            console.log("Elemento soltado dentro del canvas");
-            this.soltadoDentro = true;
-    
-            // Usar el color almacenado
-            this.selectedColor = this.selectedTouchColor;
-            this.drawCar(this.carPosition);
-        } else {
-            console.log("Elemento soltado fuera del canvas");
-            this.soltadoDentro = false;
-        }
+        // Dibujar el coche con el nuevo color
+        this.drawCar(this.carPosition);
     }
 
     drawCar(position) {
