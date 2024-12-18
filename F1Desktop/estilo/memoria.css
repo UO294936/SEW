@@ -1,0 +1,163 @@
+/*Saúl Martín Fernández UO294936*/
+
+/*
+  Especificidad: (0, 0, 1) = 1
+*/
+h2 { 
+  text-align: center;
+}
+
+/*
+  Especificidad: (0, 0, 1) = 1
+*/
+section {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  max-width: 80%;
+  margin: auto;
+  padding: 1.5em 5em;
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+*/
+section > h4 {
+  width: 100%;
+  text-align: center;
+}
+
+/*
+  Especificidad: (0, 0, 1) = 1
+*/
+article {
+  flex: 0 0 21%;
+  width: 13em;
+  height: 17em;
+  margin: 0.6em;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.05);
+  position: relative;
+  border: 0.1em solid #333;
+  border-radius: 0.5em;
+}
+
+/*
+  Especificidad: (0, 1, 1) = 11
+*/
+article[data-state="flip"] {
+  transform: rotateY(180deg);
+}
+
+/*
+  Especificidad: (0, 1, 1) = 11
+*/
+article[data-state="revealed"] {
+  transform: rotateY(180deg);
+  cursor: default;
+  box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.05);
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+  (Texto e imagen dentro de la tarjeta de memoria)
+*/
+article h3, article img {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #9A2F2D;
+  position: absolute;
+  backface-visibility: hidden;
+  font-size: 1.8em;
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+  (Texto dentro de la tarjeta de memoria)
+*/
+article h3 {
+  display: flex;
+  color: #ffffff;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(0deg);
+}
+
+/*
+  Especificidad: (0, 0, 2) = 2
+  (Imagen dentro de la tarjeta de memoria)
+*/
+article img {
+  object-fit: contain;
+  transform: rotateY(180deg);
+  background-color:#e1dcdc; /*Color heredado de body (#000000)*/ /*Redifinición del color de fondo del interior de la tarjeta para que haya buen constraste con el logo*/
+  display: block;
+  max-width: 100%;
+}
+
+@media (min-width:768px) and (max-width:1080px) {
+  /*
+    Especificidad: (0, 0, 1) = 1
+  */
+  article {
+      margin: 0.3em;   /*Redifinición del espacio entre las tarjetas para tablets*/ 
+      height: 14em;    /*Redifinición de la altura de las tarjetas para tablets*/
+  }
+
+  /*
+    Especificidad: (0, 0, 1) = 1
+  */
+  section {
+    max-width: 100%;    /*Redefinición del espacio para colocar todas las tarjetas para tablets */
+  }
+
+  /*
+    Especificidad: (0, 0, 2) = 2
+  */
+  article h3 {
+    font-size: 1.6em;   /*Redifinición del tamaño de fuente de las tarjetas para tablets*/ 
+  }
+}
+
+@media (max-width: 768px) {
+  
+  /*
+    Especificidad: (0, 0, 1) = 1
+  */
+  article {
+    margin: 0.2em;    /*Redifinición del espacio entre las tarjetas para dispositivos móviles*/ 
+    height: 8em;      /*Redifinición de la altura de las tarjetas para dispositivos móviles*/
+    box-shadow: none; /*Redifinición de la sombra de las tarjetas para dispositivos móviles (desactivada)*/
+  }
+
+  /*
+    Especificidad: (0, 0, 1) = 1
+  */
+  section {
+    padding: 0.5em 0.1em; /*Redifinición del espacio para colocar todas las tarjetas para dispositivos móviles*/
+    max-width: 100%;      /*Redifinición del espacio para colocar todas las tarjetas para dispositivos móviles*/
+    height: auto;
+    overflow-y: hidden;
+  }
+
+  /*
+    Especificidad: (0, 0, 1) = 1
+  */
+  main {
+    padding: 0.2em 0.1em;
+    margin: 0.1em;
+  }
+  /*
+    Especificidad: (0, 0, 2) = 2
+  */
+  article h3 {
+    font-size: 1em;   /*Redifinición del tamaño de fuente de las tarjetas para dispositivos móviles*/ 
+  }
+  
+
+}

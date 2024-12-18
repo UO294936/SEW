@@ -1,0 +1,66 @@
+/*Saúl Martín Fernández UO294936*/
+
+/*
+    Especificidad: (0, 0, 1) = 1
+*/
+section {
+    max-width: 90%;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+    gap: 0.5em;
+    align-items: stretch;
+}
+
+/*
+    Especificidad: (0, 0, 1) = 1
+*/
+h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/*
+    Especificidad: (0, 0, 2) = 2
+*/
+section article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em 2em 0.5em 2em;
+    border: 0.1em solid black;
+    background-color: #EFEFEF;  /* Color heredado de body (#000000) */
+    width: 100%;
+    height: 26em;
+    box-sizing: border-box;
+}
+
+/*
+    Especificidad: (0, 0, 2) = 2
+*/
+article dt {
+    font-weight: normal;
+}
+
+/*
+    Especificidad: (0, 0, 1) = 1
+*/
+button {
+    display: block;
+    background-color: #ca4949;
+    color: white;
+    padding: 0.6em 1em;
+    border: none;
+    cursor: pointer;
+    max-width: 50%;
+    width: 15em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2em;
+    border-radius: 0.5em;
+ }
